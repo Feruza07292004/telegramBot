@@ -33,7 +33,7 @@ public class Main extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "8612643074:AAFlNANRo-uFthmelyAQ4C3GuNXBgXJid7Q"; // ❗ YANGI TOKEN QO‘Y
+        return "8612643074:AAFlNANRo-uFthmelyAQ4C3GuNXBgXJid7Q"; //
     }
 
     public static void main(String[] args) throws TelegramApiException {
@@ -68,7 +68,6 @@ public class Main extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         try {
 
-            // 🔴 SOURCE kanal postini olish
             if (update.hasChannelPost()) {
 
                 var post = update.getChannelPost();
@@ -94,7 +93,7 @@ public class Main extends TelegramLongPollingBot {
 
                 System.out.println("SAQLANDI: " + lastType);
 
-                // 🔥 FAqat senga yuboriladi
+           
                 SendMessage msg = new SendMessage();
                 msg.setChatId(ADMIN_ID);
                 msg.setText("Yangi post keldi. Chop etilsinmi?");
@@ -103,7 +102,6 @@ public class Main extends TelegramLongPollingBot {
                 execute(msg);
             }
 
-            // 🔵 BUTTON bosilishi
             if (update.hasCallbackQuery()) {
 
                 String data = update.getCallbackQuery().getData();
